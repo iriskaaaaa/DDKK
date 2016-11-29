@@ -1,0 +1,46 @@
+﻿@model AgileEnglish.Models.Entities.User
+@{
+    Layout = null;
+}
+
+<div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true">x</button>
+            <h4 class="modal-title">Регистрация</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12">
+                    @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+                    {
+                        @Html.ValidationSummary()
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+                            @*<input type="email" class="form-control" id="email" placeholder="Введите Email">*@
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Введите Email" })
+                        </div>
+                        <div class="form-group">
+                            <label for="Login">Логин</label>
+                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control",placeholder = "Введите логин" })
+                            @*<input type="name" class="form-control" id="name" placeholder="Введите логин">*@
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">Пароль</label>
+                            @Html.PasswordFor(x => x.Password, new { @class = "form-control", placeholder = "Введите пароль" })
+                            @*<input type="password" class="form-control" id="password" placeholder="Введите пароль">*@
+                        </div>
+                        <button type="submit" class="btn btn-success">Зарегистрироваться</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="~/Content/js/bootstrap.js"></script>

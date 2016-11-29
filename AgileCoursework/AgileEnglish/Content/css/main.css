@@ -29,6 +29,11 @@ body {
 	min-width: 320px;
 	position: relative;
 }
+#enter  h4,
+#registration h4 {
+	text-align: center;
+	text-transform: uppercase;
+}
 
 header {
 	background-image: 	url(../img/header.png);
@@ -36,24 +41,38 @@ header {
 	min-height: 450px;
 	font-family: "BebasBold";
 }
-
-.layer1, .layer2, .layer3 {
-    position: relative; /* Относительное позиционирование */
-} 
-
-.layer1 {
-	overflow: hidden;
+.top_line .logo_wrap {
+	position: relative;
+	margin: 25px 0 0 125px;
+	width: 110px;
 }
-.layer1 img:nth-child(1) {
-	margin: 0px 0px -45px 0px;
-    position: relative; 
+.enter {
+	margin: 25px 0 0 0;
 }
-.layer1 img:nth-child(2) {
-	position: absolute; 
-	bottom: 0;
-	right: 0;
+.enter a {
+	font-family: 'Georgia', 'Times New Roman', Times, serif;
+	font-size: 14pt;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+.slogan, .button {
+	text-align: center;
+	padding-top: 50px;
 }
 
+.slogan span {
+	font-family: 'Georgia', 'Times New Roman', Times, serif;
+	color: #ffffff;
+	font-size: 34px;
+}
+.button a {
+	font-family: 'Georgia', 'Times New Roman', Times, serif;
+	color: #ffffff;
+	font-size: 20px;
+	padding: 10px;
+	border: 2px solid;
+	border-radius: 10px;
+}
 .info_block {
 	min-height: 450px;
 	background-color: #ffffff;
@@ -125,7 +144,7 @@ footer {
 footer p {
 	font-size: 16px;
 	text-align: center;
-	padding-top: 10px;
+	padding-top: 25px;
 	font-family: "BebasBold";
     font-size: 20px;
 }

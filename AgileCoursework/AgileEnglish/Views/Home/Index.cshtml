@@ -1,115 +1,141 @@
-﻿<!DOCTYPE html>
-<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
-<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
-<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!-->
+﻿@model AgileEnglish.Models.Entities.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
 <html lang="ru">
-<!--<![endif]-->
-<head>
-	<meta charset="utf-8" />
-
-	<title>Agile English</title>
-	<meta content="" name="description" />
-	<meta content="" property="og:image" />
-	<meta content="" property="og:description" />
-	<meta content="" property="og:site_name" />
-	<meta content="website" property="og:type" />
-
-	<meta content="telephone=no" name="format-detection" />
-	<meta http-equiv="x-rim-auto-match" content="none">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-	
-	<link rel="stylesheet" href="~/Content/libs/bootstrap/bootstrap-grid-3.3.1.min.css" />
-	<link rel="stylesheet" href="~/Content/libs/font-awesome-4.2.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="~/Content/css/main.css" />
-	<link rel="stylesheet" href="~/Content/css/fonts.css" />
-	<link rel="stylesheet" href="~/Content/css/media.css" />
-</head>
-<body>
-	<header class="head">
-		<div class="container-fluid" style="padding: 0px; margin: 0px">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						
-					</div>
-				</div>
-			</div>
-		</div>
-		
-	</header>
-
-
-
-
-	<section class="info_block">
-		<div class="container">
-			<div class="row">
-			    <div class="col-md-1"></div>
-				<div class="col-md-9">
-					<h1>Vocabulary</h1>
-					<h5>Text-text-text</h5>
-				</div>
-			    <div class="col-md-2"></div>
-			</div>
-		</div>
-	</section>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <title>Agile English</title>
+
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/css/main.css" />
+    <link rel="stylesheet" href="~/Content/css/fonts.css" />
+    <link rel="stylesheet" href="~/Content/css/media.css" />
+
+   </head>
+<body>
+
+    <div id="login" class="modal fade" role="dialog">
+        @Html.Partial("_Login")
+    </div>
+
+    <div id="registration" class="modal fade" role="dialog">
+        @Html.Partial("_Register")
+    </div>
+
+    <header class="header">
+        <div class="top_line">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="logo_wrap">
+                            <a href="#" class="logo"><img src="../img/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        @{
+                            if (Request.IsAuthenticated)
+                            {
+                                <div>
+                                    Добро пожаловать, @Request.LogonUserIdentity.Name
+                                </div>
+                                <div class="enter">
+                                    @Html.ActionLink("Выход", "LogOut");
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="enter">
+                                    <a href="#" data-target="#login" data-toggle="modal">Вход</a>
+                                </div>
+                            }
+                        }
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <div class="slogan">
+                    <span>Учи английский вместe с нами</span>
+                </div>
+                <div class="button">
+                    <a href="#" data-target="#registration" data-toggle="modal">Зарегистрироваться</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="info_block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-9">
+                    <h1>Vocabulary</h1>
+                    <h5>Text-text-text</h5>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </section>
 
     <section class="func_system">
-    	<div class="container-fluid">
-    		<div class="row">
-    			<div class="func_blocks">
-    			    <div class="col-md-1"></div>
-    				<div class="col-md-3">
-    					<h3>Создание словаря</h3>
-    					<p>Вы можете создать свой собственный словарь.<br> В него Вы можете добавить любое количество слов. Этот словарь Ваш и только Ваш!</p>
-    				</div>
-    				<div class="col-md-4">
-    					<h3>Повторение слов</h3>
-    					<p>Вы можете проходить тесты на проверку знаний этих слов,   <br>таким образом повторяя их. Слова которые для Вас труднее <br>всего  в тестах будут повторятся чаще, это позволит более   <br>эффективно изучать новые слова!</p>
-    				</div>
-    				<div class="col-md-3">
-    					<h3>Напоминание</h3>
-    					<p>Система оповещения будет напоминать Вам о том , что пора повторить слова! Таким образом Вам не надо думать о том,когда   и какие слова Вам стоит повторить. Эту задачу мы берем на себя!</p>
-    				</div>
-    				<div class="col-md-1"></div>
-    			</div>
-    			
-    		</div>
-    	</div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="func_blocks">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3">
+                        <h3>Создание словаря</h3>
+                        <p>Вы можете создать свой собственный словарь.<br> В него Вы можете добавить любое количество слов. Этот словарь Ваш и только Ваш!</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Повторение слов</h3>
+                        <p>Вы можете проходить тесты на проверку знаний этих слов,   <br>таким образом повторяя их. Слова которые для Вас труднее <br>всего  в тестах будут повторятся чаще, это позволит более   <br>эффективно изучать новые слова!</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h3>Напоминание</h3>
+                        <p>Система оповещения будет напоминать Вам о том , что пора повторить слова! Таким образом Вам не надо думать о том,когда   и какие слова Вам стоит повторить. Эту задачу мы берем на себя!</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
     <section class="tagline">
-           <div class="tb_overlay">
-           		<div class="container">
-           			<div class="row">
-           			 	<div class="col-md-12">
-           			 		<p>Общайся с миром на равных</p>
-           			 	</div>
-           			</div>
-           		</div>
-           </div>
+        <div class="tb_overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Общайся с миром на равных</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-md-12">
-    				<p>Designed "DDKK" Team  2016 </p>
-    			</div>
-    		</div>
-    	</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Designed "DDKK" Team @@ 2016 </p>
+                </div>
+            </div>
+        </div>
     </footer>
 
-	<!-- Mandatory for Responsive Bootstrap Toolkit to operate -->
-	<div class="device-xs visible-xs"></div>
-	<div class="device-sm visible-sm"></div>
-	<div class="device-md visible-md"></div>
-	<div class="device-lg visible-lg"></div>
-	<!-- end mandatory -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="~/Content/js/bootstrap.js"></script>
 </body>
 </html>
