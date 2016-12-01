@@ -30,3 +30,10 @@ C:\Users\Artem\Source\Repos\Agile-coursework\AgileCoursework\AgileEnglish\bin\Sy
 C:\Users\Artem\Source\Repos\Agile-coursework\AgileCoursework\AgileEnglish\bin\System.Web.Mvc.xml
 C:\Users\Artem\Source\Repos\Agile-coursework\AgileCoursework\AgileEnglish\obj\Debug\AgileEnglish.dll
 C:\Users\Artem\Source\Repos\Agile-coursework\AgileCoursework\AgileEnglish\obj\Debug\AgileEnglish.pdb
+C:\Users\Artem\Source\Repos\Agile-coursework\AgileCoursework\AgileEnglish\obj\Debug\AgileEnglish.csprojResolveAssemblyReference.cache
+C:\Users\Artem\Source\Repos\Agile-coursework\AgileCoursework\AgileEnglish\bin\MongoDB.Bson.dll
+C:\Users\Artem\Source\Repos\Agile-coursework\AgileCoursework\AgileEnglish\bin\MongoDB.Driver.Core.dll
+C:\Users\Artem\Source\Repos\Agile-coursework\AgileCoursework\AgileEnglish\bin\MongoDB.Driver.dll
+C:\Users\Artem\Source\Repos\Agile-coursework\AgileCoursework\AgileEnglish\bin\MongoDB.Bson.xml
+C:\Users\Artem\Source\Repos\Agile-coursework\AgileCoursework\AgileEnglish\bin\MongoDB.Driver.xml
+C:\Users\Artem\Source\Repos\Agile-coursework\AgileCoursework\AgileEnglish\bin\MongoDB.Driver.Core.xml

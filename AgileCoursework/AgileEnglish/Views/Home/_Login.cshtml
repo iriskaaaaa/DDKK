@@ -1,0 +1,32 @@
+﻿@model AgileEnglish.Models.Entities.User
+@{
+    Layout = null;
+}
+
+<div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true">x</button>
+            <h4 class="modal-title">Вход</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12">
+                    @using (Html.BeginForm("LogIn", "Home", FormMethod.Post))
+                    {
+                        @Html.ValidationSummary()
+                        <div class="form-group">
+                            <label for="Login">Логин</label>
+                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @placeholder = "Введите логин" })
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">Пароль</label>
+                            @Html.PasswordFor(x => x.Password, new { @class = "form-control", @placeholder = "Введите пароль" })
+                        </div>
+                        <button type="submit" class="btn btn-success">Войти</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
