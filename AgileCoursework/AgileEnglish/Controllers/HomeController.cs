@@ -64,5 +64,11 @@ namespace AgileEnglish.Controllers
             FormsAuthentication.SignOut();
             return View("Index");
         }
+
+        public ViewResult UserPage()
+        {
+            //Implement this in another controller. Create UserController.
+            return View();
+        }
     }
 }

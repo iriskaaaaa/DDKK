@@ -43,6 +43,11 @@ header {
 	font-family: "BebasBold";
 	border-bottom: 2px solid #AE474D;
 }
+
+.box-shadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .top-line {
 	padding: 5px 0 5px 0;
 }
@@ -141,7 +146,7 @@ section.list-words {
 	background-color: #EDEDED;
 }
 section.list-words .add-word {
-	margin: 5% 0%;
+	margin: 5% 5%;
 }
 section.list-words .add-word form {
 	background-color: #ffffff;
@@ -150,17 +155,18 @@ section.list-words .add-word form {
 	border-radius: 5px;
 }
 section.list-words .search {
-	margin: 10% 0;
 	background-color: #ffffff;
 	padding: 25px 25px;
 	text-align: center;
 	border-radius: 5px;
 }
+
 section.list-words .table-words {
   width: 100%;
   overflow: auto;
   height: 300px;
   margin-bottom: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 section.list-words table {
 	background-color: #ffffff;
@@ -172,6 +178,9 @@ section.list-words table thead th {
 }
 section.list-words table tbody td {
 	text-align: center;
+}
+section.list-words table tbody tr:hover {
+	background-color: #E0E0E0;
 }
 section.list-words table .button-edit img,
 section.list-words table .button-delete img {

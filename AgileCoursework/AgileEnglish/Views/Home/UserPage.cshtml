@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
@@ -76,25 +79,25 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-3 words center">
+                <div class="col-md-3 words center box-shadow">
                     <div class="col-md-4">
-                        <img src="../img/words.png" alt="">
+                        <img src="~/Content/img/words.png" alt="">
                     </div>
                     <div class="col-md-8">
                         <p class="title-box">Количество слов</p>
                         <p class="title-box size-count">40</p>
                     </div>
                 </div>
-                <div class="col-md-3 repeat center">
+                <div class="col-md-3 repeat center box-shadow">
                     <div class="col-md-4">
-                        <img src="../img/repeat.png" alt="">
+                        <img src="~/Content/img/repeat.png" alt="">
                     </div>
                     <div class="col-md-8">
                         <p class="title-box1">Необходимо повторить слов</p>
                         <p class="title-box size-count">40</p>
                     </div>
                 </div>
-                <div class="col-md-3 view-statics center">
+                <div class="col-md-3 view-statics center box-shadow">
                     <div class="col-md-4">
                         <img src="~/Content/img/statics.png" alt="">
                     </div>
@@ -108,9 +111,9 @@
 
     <section class="list-words">
         <div class="container">
-            <div class="row">
+            <div class="row add-word">
                 <div class="col-md-8">
-                    <div class="add-word">
+                    <div class="box-shadow">
                         <form class="form-inline">
                             <div class="form-group">
                                 <label class="sr-only" for="word">Слово</label>
@@ -125,7 +128,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="search">
+                    <div class="search box-shadow">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Найти...">
                             <span class="input-group-btn">
@@ -361,7 +364,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p>Designed "DDKK" Team @ 2016 </p>
+                    <p>Designed "DDKK" Team @@ 2016 </p>
                 </div>
             </div>
         </div>
