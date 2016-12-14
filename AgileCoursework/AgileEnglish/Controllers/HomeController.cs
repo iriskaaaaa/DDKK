@@ -16,7 +16,7 @@ namespace AgileEnglish.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Homt
+        // GET: Home
         public ViewResult Index()
         {
             return View();
