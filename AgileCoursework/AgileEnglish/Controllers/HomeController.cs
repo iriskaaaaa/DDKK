@@ -40,6 +40,8 @@ namespace AgileEnglish.Controllers
             {
                 var usersRepository = MongoDbProvider.Get.UsersRepository;
                 var filter = Builders<BsonDocument>.Filter.Eq("Name", user.Name) & Builders<BsonDocument>.Filter.Eq("Password", user.Password.HashToSHA256());
+                
+             
                 var result = usersRepository.FindAsync(filter).Result.SingleOrDefault();
 
                 if (result != null)

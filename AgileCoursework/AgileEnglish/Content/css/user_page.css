@@ -1,0 +1,197 @@
+*::-webkit-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-ms-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	
+}
+body input:required:valid,
+body textarea:required:valid {
+	
+}
+body {
+	font-family: "RobotoRegular", sans-serif;
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+}
+a {
+	color: #ffffff;
+	text-decoration: none;
+}
+a:hover {
+	color: #AE474D;
+}
+header {
+	background-color: #F74C55;
+	background-size: cover;
+	min-height: 65px;
+	font-family: "BebasBold";
+	border-bottom: 2px solid #AE474D;
+}
+.top-line {
+	padding: 5px 0 5px 0;
+}
+.top-line .logo-wrap {
+	position: relative;
+	margin: 5px 0 5px 125px;
+	width: 100px;
+}
+.top-line .profile-info  {
+	padding: 4% 5% 0 0; 
+}
+.top-line .profile-info a {
+	text-decoration: none;
+	font-size: 18px;
+}
+section.user-info {
+	margin: 5% 0 5% 0;
+}
+.user-info img {
+	max-width: 120px;
+	max-height: 100px;
+}
+.user-info .login { 
+	padding-bottom: 10px;
+	border-bottom: 	2px solid #F1F1F1;
+}
+.user-info .login a {
+	color: #4F4F4F;
+	font-family: "BebasBold";
+	font-size: 18px;
+	text-decoration: none;
+}
+.user-info .block-data {
+	padding-top: 10px;
+}
+.user-info .block-data .button-edit {
+	margin-left: 5px;
+}
+.user-info .block-data img {
+	width: 15px;
+	height: 15px;
+}
+.user-info .block-data p.text1 {
+	font-family: "BebasBold";
+	font-size: 16px;
+	margin-bottom: 0px !important;
+}
+.user-info .block-data a.text2 {
+	color: #442A9D;
+	font-size: 14px;
+	font-family: "BebasBold";
+}
+section.statics {
+	padding-bottom: 2%;
+	border-bottom: 2px solid #CBCBCB;
+}
+section.statics .center {
+	text-align: center;
+	padding: 1% 0 1% 0;
+	color: #ffffff;
+	margin-left: 2%;
+	border-radius: 5px;
+}
+section.statics .center img {
+	width: 125px;
+	height: 150px;
+}
+section.statics .title-box {
+	font-family: "BebasRegular";
+	font-size: 26px;
+	text-align: center;
+	padding-top: 5%;
+}
+section.statics .title-box1 {
+	font-family: "BebasRegular";
+	font-size: 22px;
+	text-align: center;
+	padding-top: 5%;
+}
+section.statics .title-box a:hover{
+	color: #F74C55;
+	text-decoration: none;
+}
+section.statics .size-count {
+	font-family: "BebasBold";
+	font-size: 30px;
+}
+section.statics .words,
+section.statics .view-statics {
+	background-color: #404040;
+}
+section.statics .repeat {
+	background-color: #F74C55;
+}
+section.list-words {
+	background-color: #EDEDED;
+}
+section.list-words .add-word {
+	margin: 5% 0%;
+}
+section.list-words .add-word form {
+	background-color: #ffffff;
+	padding: 25px 0px;
+	text-align: center;
+	border-radius: 5px;
+}
+section.list-words .search {
+	margin: 10% 0;
+	background-color: #ffffff;
+	padding: 25px 25px;
+	text-align: center;
+	border-radius: 5px;
+}
+section.list-words .table-words {
+  width: 100%;
+  overflow: auto;
+  height: 300px;
+  margin-bottom: 5%;
+}
+section.list-words table {
+	background-color: #ffffff;
+	table-layout: fixed;
+}
+section.list-words table thead th {
+	font-weight: 600;
+	text-align: center;
+}
+section.list-words table tbody td {
+	text-align: center;
+}
+section.list-words table .button-edit img,
+section.list-words table .button-delete img {
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+}
+footer {
+	min-height: 80px;
+	background-color: #fff;
+	border-top: 9px solid #40c4c8;
+	-moz-border-image: url(../img/colors_line.png) 9 round;
+    -webkit-border-image: url(../img/colors_line.png) 9 round; 
+    -o-border-image: url(../img/colors_line.png) 9 round;
+    border-image: url(../img/colors_line.png) 9 round;	
+}
+footer p {
+	font-size: 16px;
+	text-align: center;
+	padding-top: 25px;
+	font-family: "BebasBold";
+    font-size: 20px;
+}

@@ -108,8 +108,23 @@
     <Content Include="Content\css\fonts.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\media.css" />
+    <Content Include="Content\css\user_page.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\background_tagline.png" />
+    <Content Include="Content\img\button_delete.png" />
+    <Content Include="Content\img\button_edit.png" />
+    <Content Include="Content\img\colors_line.png" />
+    <Content Include="Content\img\eclipse1.png" />
+    <Content Include="Content\img\eclipse2.png" />
+    <Content Include="Content\img\eclipse3.png" />
+    <Content Include="Content\img\eclipse4.png" />
+    <Content Include="Content\img\header.png" />
     <Content Include="Content\img\header1.png" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\repeat.png" />
+    <Content Include="Content\img\statics.png" />
+    <Content Include="Content\img\user_logo.PNG" />
+    <Content Include="Content\img\words.png" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -157,6 +172,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\_Login.cshtml" />
+    <Content Include="Views\Home\UserPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -171,6 +187,7 @@
     <Folder Include="Views\Dictionary\" />
     <Folder Include="Views\Settings\" />
     <Folder Include="Views\TestGame\" />
+    <Folder Include="Views\UserPage\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

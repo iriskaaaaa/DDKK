@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-
+//Remove un
 namespace AgileEnglish.Models.Entities
 {
     public class User
@@ -19,10 +19,16 @@ namespace AgileEnglish.Models.Entities
         [Required(ErrorMessage = "Пожалуйста, введите пароль")]
         public string Password { get; set; }
         public string Email { get; set; }
+
+        
         //public Gender Gender { get; set; }
         //public int Age { get; set; }
+
+       
         public List<Word> Words_en { get; set; }
+        
     }
+
 
     public enum Gender
     {
