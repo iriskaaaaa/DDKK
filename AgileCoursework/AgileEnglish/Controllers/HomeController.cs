@@ -36,6 +36,7 @@ namespace AgileEnglish.Controllers
         [HttpPost]
         public ActionResult LogIn(User user)
         {
+            User userEntity = null;
             if (ModelState.IsValid)
             {
                 var usersRepository = MongoDbProvider.Get.UsersRepository;
@@ -46,18 +47,27 @@ namespace AgileEnglish.Controllers
 
                 if (result != null)
                 {
-                    //var dbUser = BsonSerializer.Deserialize<User>(result);
+                    userEntity = BsonSerializer.Deserialize<User>(result);
 
                     //if (dbUser != null)
                     //{
-                        FormsAuthentication.SetAuthCookie(user.Name, false);
+                    
+                    FormsAuthentication.SetAuthCookie(user.Name, false);
+                    TempData["user"] = userEntity;
+                    return RedirectToAction("UserPage", "UserPage");
                     //}
                 }
               
             }
-            return View("Index", user);
+            return RedirectToAction("Index", userEntity);
         }
         #endregion
+
+        //public ActionResult RedirectToUserPage(User user)
+        //{
+        //    return View("/UserPage/Index", user);
+        //}
+
 
         public ViewResult LogOut()
         {

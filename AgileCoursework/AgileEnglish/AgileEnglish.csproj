@@ -156,6 +156,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\TestGameController.cs" />
+    <Compile Include="Controllers\UserPageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,7 +173,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\_Login.cshtml" />
-    <Content Include="Views\Home\UserPage.cshtml" />
+    <Content Include="Views\UserPage\UserPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -187,7 +188,6 @@
     <Folder Include="Views\Dictionary\" />
     <Folder Include="Views\Settings\" />
     <Folder Include="Views\TestGame\" />
-    <Folder Include="Views\UserPage\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
