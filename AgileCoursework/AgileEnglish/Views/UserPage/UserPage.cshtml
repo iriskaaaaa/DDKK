@@ -1,7 +1,9 @@
-﻿@model AgileEnglish.Models.Entities.User
-@{ 
+﻿
+@model AgileEnglish.Models.Entities.User
+@{
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -30,7 +32,7 @@
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
                         <div class="profile-info pull-right">
-                            @Html.ActionLink("Выход", "Index", "Home")
+                            @Html.ActionLink("Выход", "Index", "Home") 
                         </div>
                     </div>
                 </div>
@@ -45,26 +47,28 @@
                     <img src="~/Content/img/user_logo.png" alt="user_logo" class="pull-right">
                 </div>
                 <div class="col-md-9">
-                    <div class="login"><a href="#" class="name">Denis Dobulyak</a></div>
+                    @*<div class="login">
+                        <a href="#" class="name">Denis Dobulyak</a>
+                    </div>*@
                     <div class="block-data">
                         <div class="row">
                             <div class="col-md-3">
                                 <p class="text-muted text1">email</p>
-                                @Html.TextBoxFor(x => x.Email, new { @class = "text2" })
+                                @Html.TextBoxFor(x => x.Email, new { @class = "form-control" }) 
                                 <span class="button-edit">
                                     <a href="#" title="Изменить"><img src="~/Content/img/button_edit.png" alt="Изменить"></a>
                                 </span>
                             </div>
                             <div class="col-md-3">
                                 <p class="text-muted text1">login</p>
-                                @Html.TextBoxFor(x => x.Name, new { @class = "text2" })
+                               @Html.TextBoxFor(x => x.Name, new { @class = "form-control" }) 
                                 <span class="button-edit">
                                     <a href="#" title="Изменить"><img src="~/Content/img/button_edit.png" alt="Изменить"></a>
                                 </span>
                             </div>
                             <div class="col-md-3">
                                 <p class="text-muted text1">password</p>
-                                @Html.PasswordFor(x => x.Password, new { @class = "text2" })
+                                @Html.PasswordFor(x => x.Password, new { @class = "form-control" }) 
                                 <span class="button-edit">
                                     <a href="#" title="Изменить"><img src="~/Content/img/button_edit.png" alt="Изменить"></a>
                                 </span>
@@ -80,7 +84,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-3 words center box-shadow">
+                <div class="col-md-3"></div>
+                <div class="col-md-3 repeat center box-shadow">
                     <div class="col-md-4">
                         <img src="~/Content/img/words.png" alt="">
                     </div>
@@ -89,23 +94,7 @@
                         <p class="title-box size-count">@Model.Words_en.Count()</p>
                     </div>
                 </div>
-                <div class="col-md-3 repeat center box-shadow">
-                    <div class="col-md-4">
-                        <img src="~/Content/img/repeat.png" alt="">
-                    </div>
-                    <div class="col-md-8">
-                        <p class="title-box1">Необходимо повторить слов</p>
-                        <p class="title-box size-count">40</p>
-                    </div>
-                </div>
-                <div class="col-md-3 view-statics center box-shadow">
-                    <div class="col-md-4">
-                        <img src="~/Content/img/statics.png" alt="">
-                    </div>
-                    <div class="col-md-8">
-                        <p class="title-box"><a href="#">Пройти<br>тестирование</a></p>
-                    </div>
-                </div>
+                <div class="col-md-3 "></div>
             </div>
         </div>
     </section>
@@ -115,26 +104,33 @@
             <div class="row add-word">
                 <div class="col-md-8">
                     <div class="box-shadow">
-                        <form class="form-inline">
+                        @using (Html.BeginForm("AddWord", "UserPage", FormMethod.Post, new { @class = "form-inline" }))
+                        {
+                            @Html.Hidden("userId", Model._id)
                             <div class="form-group">
                                 <label class="sr-only" for="word">Слово</label>
-                                <input type="text" class="form-control" id="word" placeholder="Слово">
+                                @Html.TextBox("addValue", "", new { @class = "form-control", placeholder = "Слово"})
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="translate">Перевод</label>
-                                <input type="text" class="form-control" id="translate" placeholder="Перевод">
+                                @Html.TextBox("addTranslation", "", new { @class = "form-control", placeholder = "Перевод" })
                             </div>
-                            <button type="submit" class="btn btn-primary">Сохранить</button>
-                        </form>
+                            <input type="submit" class="btn btn-primary" value="Сохранить" />
+                        }
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="search box-shadow">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Найти...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-secondary" type="button">Поиск!</button>
-                            </span>
+                            @using (Html.BeginForm("FilterWords", "UserPage", FormMethod.Get))
+                            {
+                                @Html.Hidden("userId", Model._id)
+                                <span class="input-group-btn">
+                                     @Html.TextBox("filter", "", new { @class = "form-control", placeholder = "Найти...", style="width:200px"})
+                                    <input type="submit" class="btn btn-secondary" value="Поиск!" />
+                                </span>
+                            }
+                           
                         </div>
                     </div>
                 </div>
@@ -154,28 +150,36 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                
                                     @{
-                                        if(Model.Words_en != null)
+                                        if (Model.Words_en != null)
                                         {
                                             foreach (var word in Model.Words_en)
                                             {
-                                            <tr>
-                                                <td>@word.ID</td>
-                                                <td>@word.Value</td>
-                                                <td>@word.Translation</td>
-                                                <td>
-                                                    <span class="button-edit">
-                                                        <a href="#" title="Изменить"><img src="~/Content/img/button_edit.png" alt="Изменить"></a>
-                                                    </span>
-                                                    <span class="button-delete">
-                                                        <a href="#" title="Удалить"><img src="~/Content/img/button_delete.png" alt="Удалить"></a>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            }    
-                                        }
+                                                <tr>
+                                                    @using (Html.BeginForm("EditWord", "UserPage", FormMethod.Post))
+                                                    {
+                                                        @Html.Hidden("userId", Model._id)
+                                                        @Html.Hidden("wordId", word.ID)
+                                                        <td>@word.ID</td>
+                                                        <td>@Html.TextBox("value", word.Value, new { style = "border:none" })</td>
+                                                        <td>@Html.TextBox("translation", word.Translation, new { style = "border:none" })</td>
+                                                        <td>
+                                                            <span class="button-edit">
+                                                                <input type="image" alt="Изменить" src="~/Content/img/button_edit.png" width="25" height="25" />
+                                                            </span>
+                                                            <span class="button-delete">
+                                                                <a href='@string.Format("http://localhost:36269/UserPage/RemoveWord?wordId={0}&userId={1}", word.ID, Model._id)'>
+                                                                    <img src="~/Content/img/button_delete.png" alt="Удалить" width="25" height="25">
+                                                                </a>
+                                                            </span>
+                                                        </td>
+                                                    }
+                                                    
+                                                </tr>
+                                             }
+                                         }
                                     }
-                                    
                                 </tbody>
                             </table>
                         </div>

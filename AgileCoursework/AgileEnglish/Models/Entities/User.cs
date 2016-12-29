@@ -11,13 +11,17 @@ namespace AgileEnglish.Models.Entities
     public class User
     {
         
+        [BsonId]
         public ObjectId _id { get; set; }
 
         [Required(ErrorMessage = "Пожалуйста, введите свое имя")]
+        [BsonElement(elementName: "Name")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Пожалуйста, введите пароль")]
+        [BsonElement(elementName: "Password")]
         public string Password { get; set; }
+        [BsonElement(elementName: "Email")]
         public string Email { get; set; }
 
 
@@ -26,6 +30,9 @@ namespace AgileEnglish.Models.Entities
 
 
         private List<Word> words_en;
+        [BsonIgnoreIfNull]
+        [BsonElement(elementName: "Words_en")]
+        //[BsonRepresentation(BsonType.Array)]
         public List<Word> Words_en {
             get
             {

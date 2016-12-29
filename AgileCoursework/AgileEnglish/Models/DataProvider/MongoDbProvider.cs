@@ -14,7 +14,7 @@ namespace AgileEnglish.Models.DataProvider
         
         private static MongoDbProvider instance;
 
-        public IMongoCollection<BsonDocument> UsersRepository
+        public IMongoCollection<User> UsersRepository
         {
             get;
             private set;
@@ -26,7 +26,7 @@ namespace AgileEnglish.Models.DataProvider
             string connectionString = ConfigurationManager.ConnectionStrings["MongoDb"].ConnectionString;
             var client = new MongoClient(connectionString);
             IMongoDatabase database = client.GetDatabase("AgileEnglish");
-            UsersRepository = database.GetCollection<BsonDocument>("users");
+            UsersRepository = database.GetCollection<User>("users");
         }
         
         public static MongoDbProvider Get

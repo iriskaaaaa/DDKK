@@ -29,7 +29,7 @@ namespace AgileEnglish.Controllers
             if (ModelState.IsValid)
             {
                 user.Password = user.Password.HashToSHA256();
-                MongoDbProvider.Get.UsersRepository.InsertOneAsync(BsonDocument.Create(user));
+                MongoDbProvider.Get.UsersRepository.InsertOneAsync(user);
             }
             return RedirectToAction("Index");
         }
@@ -40,21 +40,21 @@ namespace AgileEnglish.Controllers
             if (ModelState.IsValid)
             {
                 var usersRepository = MongoDbProvider.Get.UsersRepository;
-                var filter = Builders<BsonDocument>.Filter.Eq("Name", user.Name) & Builders<BsonDocument>.Filter.Eq("Password", user.Password.HashToSHA256());
+                //var filter = Builders<BsonDocument>.Filter.Eq("Name", user.Name) & Builders<BsonDocument>.Filter.Eq("Password", user.Password.HashToSHA256());
                 
              
-                var result = usersRepository.FindAsync(filter).Result.SingleOrDefault();
+                var result = usersRepository.FindAsync(x => x.Name == user.Name && x.Password == user.Password.HashToSHA256()).Result.SingleOrDefault();
 
                 if (result != null)
                 {
-                    userEntity = BsonSerializer.Deserialize<User>(result);
+                    userEntity = result;//BsonSerializer.Deserialize<User>(result);
 
                     //if (dbUser != null)
                     //{
                     
                     FormsAuthentication.SetAuthCookie(user.Name, false);
                     TempData["user"] = userEntity;
-                    return RedirectToAction("UserPage", "UserPage");
+                    return RedirectToAction("Index", "UserPage");
                     //}
                 }
               

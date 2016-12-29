@@ -193,3 +193,5 @@ C:\Users\Artem\Source\Repos\DDKK\AgileCoursework\AgileEnglish\bin\System.Web.Mvc
 C:\Users\Artem\Source\Repos\DDKK\AgileCoursework\AgileEnglish\obj\Debug\AgileEnglish.csprojResolveAssemblyReference.cache
 C:\Users\Artem\Source\Repos\DDKK\AgileCoursework\AgileEnglish\obj\Debug\AgileEnglish.dll
 C:\Users\Artem\Source\Repos\DDKK\AgileCoursework\AgileEnglish\obj\Debug\AgileEnglish.pdb
+C:\Users\Artem\Source\Repos\DDKK\AgileCoursework\AgileEnglish\bin\Newtonsoft.Json.dll
+C:\Users\Artem\Source\Repos\DDKK\AgileCoursework\AgileEnglish\bin\Newtonsoft.Json.xml
